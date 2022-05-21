@@ -1,0 +1,81 @@
+1£ºSome basic concept of file name:
+    bin: contains user executable files
+    boot: files are required to boot the OS
+    dev: store things to the hardware devices that connected to this machina, not driver, just some information about hardware devices
+    etc: contains local system configuration files for the host computer
+    home: home directory storage for user file. This is actually where all of our users home folders are going to be stored. 
+        this is not actually the home folder for superuser(root). Like /home/ling
+    lib: contains libraries files that are required to be in this system 
+    media: mount external removable media devices like USB
+    mnt: where we mount temporary file system
+    opt: optional files 
+    sbin: where we store system binary files 
+    tmp: temporary files 
+    usr: shareable read-only files 
+    var: database software, store variable data files  
+
+
+2: 
+    (1): mkdir
+        make a directory: 
+    
+    (2): touch
+        make a empty file: 
+    
+    (3): pwd
+        print out the current working directory: 
+    
+    (4): cat
+        read a file: 
+    
+    (5): cat >> file.txt  
+        add content to a new file and we can use CTRL + D to end.
+	    If we cat >> file.txt again, it is going to concatenate to the end of the file and not override the file.
+	    If this file does not exist before, we can still use this command to create this file and write something directly.
+    
+    (6): cat newfile1.txt >> file1.txt    
+        concatenate one file to another file. --> add the newfile1 to the end of file1.txt
+    
+    (7): mv file.txt file2       
+        move a file. --> move file.txt into file2
+	
+    (8): mv file.txt file1.txt file2    
+        move multiply file into file2
+    
+    (9): cp tim.txt copied.txt     
+        copy tim.txt to copied.txt file
+     
+    (10): rm copied.txt  
+        remove this file
+    
+    (11): rm -i copiyed.txt   
+        (stands for interactive, means we wanna confirmation )
+	
+    (12): rm -d folder1       
+        remove a folder(if it is empty)  --> stands for directory
+    
+    (13): rm -r folder1        
+        remove a folder and its content   --> stands for recursive, means recursively delete everything inside this folder
+
+	(14): rmdir 
+        --> same with rm -d folder1
+
+    (15): rm *.txt
+        If we wanna remove something that has some patterns --> remove all the txt file
+	
+    (16): rm tim .*   
+        --> remove any file extension about "tim"
+    
+    (17): find . -name file3.txt  or find . -name "*.txt"
+        search for a specific files or directories in our current working directory:   
+	
+    (18): find . -iname File5.txt  
+        ---> Do not consider  capital (file all upper case or lower case)
+	
+    (19): find . -type d -name folder3   
+        --> find this folder(d stands for directory)
+
+
+
+ 
+
