@@ -1,0 +1,75 @@
+We are in root user now: 
+    sudo -i root or sudo -s 
+
+1: adduser tim
+    Create a new user and we can finish some detail info optionally
+
+2: cat /etc/passwd
+    View all the users on this system
+
+3: (1): logout --> log out the current user
+   (2): restart the system --> su -l tim  or su - tim
+    Sign in the user that we created just now (signing in as other user)
+    New we can not access the root folder because we do not have permission to do so
+
+New back to root user and deal with something about group
+4: deluser tim
+    delete user
+
+5: (1): passwd tim
+    change user's password
+   (2): passwd
+    change password for myself
+
+6: A group is a collection of users with same permission
+
+    Primary group and secondary group:
+        -1: 1 primary group
+        -2: 15 secondary groups
+        -3: Every new file is owned by User's Primary group
+        -4: Primary Groups: Anyone who is apart of the group has access to the file 
+        -5: secondary Groups: Users can belong to multiple secondary groups
+
+7: addgroup python
+    --> create a new group
+
+8: usermod -a -G python tim
+    Assigning users to groups (a stands for append, G stands for group)
+
+9: groups tim   
+    See what a group is the  user signing to (tim belongs to python group)
+
+10: groups
+    See the group the current user is signing to 
+
+11: gpasswd -d tim python
+    Remove user from groups
+
+12: (1): visudo 
+    Edition permission
+    (2): type something under "root"
+        tim ALL=/user/bin/top
+            --> tim now has access to this top command. When we finish, we can type CTRL + S and CTRL + X to save the file
+
+sign in tim and see the command we added just now
+13: top
+    --> Check this command
+
+back to root
+Add permissions to the python group
+14: (1): visudo
+
+    write something under %sudo(group)
+    (2): %python ALL=/usr/bin/ls, /usr/bin/less, /usr/bin/apt
+
+15: which cat
+    Finding command location
+
+back to tim
+16: apt
+    ls
+    less /etc/group  --> type ":wq" to exit
+
+17: delgroup python
+    Delete the group
+
