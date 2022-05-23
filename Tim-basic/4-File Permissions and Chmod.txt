@@ -1,0 +1,60 @@
+1: ls -l
+    display our files in this long View:
+    
+    Each column:
+    1: file permissions or the file mode. The first character stands for what type of file it is: "d" --> directory, 
+        "-" --> regular file. The last 9 characters represent the permissions for this file and for specific users(read these 
+        three by three). "rwx" --> read, write and execute. And these three sets of characters stand for "permission for user",
+        "permission for group" and "permission for all users".
+    2: number of files that contains within this file or within this directory
+    3: first root: the user who owns this file or created this file 
+    4: second root: the group that this file belongs to, same as user name
+    5: size of this file or this directory
+    6: crated date and time
+    7: file name or directory name
+
+
+2: chmod 
+    --> Change the permissions of these files or directories. "chmod" --> change mode 
+    
+    chmod [who] [+, -, =] [permission(s)] filename
+    chmod -R [who] [+, -, =] [permission(s)] directory name  --> "R" --> recursive
+    
+    who --> u(user), g(group), o(other), a(all)
+
+
+    Example:
+    (1): chmod a+w abc.txt
+        --> Change the permission of this file so that all users can write to this file 
+        ls -l --> go to Check(all users and groups can have this permission now)
+
+    (2): chmod u+x abc.txt
+        --> Only allow the user can execute this file
+    
+    (3): chmod -R a+w a
+        --> Add a write ability for all users in the a directory
+
+3: (1): chmod -R a-w a 
+    Remove permission
+   
+   (2): chmod -R a=w a
+    Set permission
+   
+   (3): chmod a=wr abcd.txt
+
+    
+4: What happens when we do not specific a user?
+    (1): chmod +x abcd.txt 
+        Add this permission for all the users
+    
+    (2): chmod -x abcd.txt 
+        Remove this permission for all the users
+
+5: How to set multiple permissions at the same time?
+    chmod g+w, o-r, a+x abcd.txt
+    
+
+
+    
+    
+    
