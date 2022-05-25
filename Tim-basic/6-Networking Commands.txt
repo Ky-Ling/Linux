@@ -1,0 +1,40 @@
+1: ifconfig
+    --> Showing the networking interface
+    eth0 --> Internet connection
+
+2: ip -4 addr
+   ip -6 addr
+    --> Get ip information
+
+3: (1): netstat
+    --> Detail information of the network activity
+   (2): netstat -a
+    --> Looking for the listening ports, for TCP/UDP connections
+   (3): netstat -at
+    --> All of the TCP port connections 
+   (4): netstat -l
+    --> All of the active ports
+   (5): netstat -u
+    --> All of the UDP ports
+
+4: (1): curl https://www.baidu.com
+    --> Test out endpoint or send a GET request to a url 
+   (2): curl -X POST --data "p1=value1&p2=value2" https://www.techwithtim.net
+    --> Send a POST request 
+   (3): curl -X POST -d p1=value1 https://www.techwithtim.net
+        curl -X POST -d p1=value1 -d p2=value2 https://www.techwithtim.net
+    --> Another way 
+   (4): curl -o response https://www.techwithtim.net
+    --> Save the response from the sever to a file. And we can "cat response" to see this response file.
+   (5): curl -I https://www.techwithtim.net
+    --> Check the header information from the response
+   (6): curl --help
+   (7): curl --header "Content-type:application/json" -X POST -d p1=value1 https://www.techwithtim.net
+    --> Send a header with the request
+
+5: ping google.com
+    --> Send packages to a address or a domain
+
+
+
+        
