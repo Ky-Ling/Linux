@@ -1,0 +1,47 @@
+Public/Private Key Authentication(RSA) & FTP
+
+1: RSA KEY PAIRS:
+    - Public Key: is stored on the server 
+    - Private Key: is stored on local machine
+
+2: After installing the application
+    (1): Change to number of the generated key to 4096 and make sure RSA is selected
+    (2): After clicking "Generate" --> Fill in the passphrase
+    (3): "Save Public key" and "Save private key" --> txt and ppk extension
+
+3: Go to Putty
+    (1): Load the setting file we just saved
+    (2): Connection -> SSH -> Auth -> Select the private key file 
+    (3): Session -> Save the file folder
+    (4): "Open" and sign in root user
+
+4: Add Public key into this machine
+    (1): cd .ssh
+        --> If we do not have a ssh folder, we have to create a new folder
+    (2): mkdir .ssh
+    (3): cd .shh
+    (4): touch authorized_keys
+    (5): cd ..
+    
+    (6): chmod a+rwx,g-rwx,o-rwx ./ssh
+    (7): cd .ssh
+    (8): chmod a+rwx,u-x,g-rwx,o-rwx authorized_keys
+        --> Add permission for this folder and this file 
+
+    (9): nano authorized_keys
+        --> Add public key into this file
+        --> Copy the content of the public key file paste into this file 
+        --> Before the file line of code --> we type: ssh-rsa 
+        --> And all the keys have to be on one line
+        --> CTRL + S and CTRL + X
+    (10): logout or exit
+
+    (11): go to Putty and load the file folder and open it.
+    (12): Then it automatically authenticate me.
+
+5: FTP access
+    (1): Download FileZilla
+    (2): Open it (port: 22) --> QuickConnect
+    (3): Edit -> settings -> SFTP -> Add key file (private key) -> OK
+    (4): We clear the password for the root user. Now we can connect to the server and fill in to passphrase 
+    (5): And now we are signing into the server
