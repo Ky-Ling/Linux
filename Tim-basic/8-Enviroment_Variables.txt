@@ -1,0 +1,42 @@
+1: env
+    --> Listing variables
+
+2: (1): printenv TIM 
+   (2): echo $USER 
+    --> Printing specific variables
+
+3: (1): export VAR=test
+    --> Export a newly assigned environment variable to this environment
+    --> Creating variables. 
+   
+   (2): printenv VAR
+    --> But we just create a temporary variable, this variable is only associated with our current session
+
+4: (1): nano .bashrc
+    --> Creating persistent user variable
+
+   (2): export DOESTHISWORK = "does this work?"
+    --> write on the top
+   
+   (3): CTRL + S and CTRL + X
+
+   (4): source .bashrc
+    --> Update the bash rc file or the environment variables for us
+   
+   (5): env
+
+5: (1): cd etc --> go to etc directory first
+    --> Creating persistent global variable
+   
+   (2): nano environment
+
+   (3): export GLOBAL = "testing!"
+   (4): source environment
+   (5): echo $GLOBAL
+    --> we can get the content of this global variable
+
+6: (1): export TOBEREMOVED = "remove this file"
+   (2): printenv TOBEREMOVED
+   (3): unset TOBEREMOVED
+    --> It only work for session 
+    --> Remove variables

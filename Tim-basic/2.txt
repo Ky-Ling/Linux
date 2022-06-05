@@ -1,4 +1,4 @@
-1£ºSome basic concept of file name:
+1: Some basic concept of file name:
     bin: contains user executable files
     boot: files are required to boot the OS
     dev: store things to the hardware devices that connected to this machina, not driver, just some information about hardware devices
@@ -48,7 +48,7 @@
     (10): rm copied.txt  
         remove this file
     
-    (11): rm -i copiyed.txt   
+    (11): rm -i copied.txt   
         (stands for interactive, means we wanna confirmation )
 	
     (12): rm -d folder1       
