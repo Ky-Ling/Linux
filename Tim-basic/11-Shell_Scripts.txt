@@ -1,0 +1,71 @@
+1: Creating a shell script
+    (1): nano test.sh
+    (2): #!/bin/bash
+        --> Add a shebang: #!"name of the shell"
+    (3): # this is a comment
+        --> Write a comment
+    (4): echo "Hello World"
+         echo "Hi"
+
+         --> After these two command, Exit
+    (5): ./test.sh
+        --> Executing shell script, but we may do not have permission, so we have to add permission to execute this file
+    (6): chmod +x test.sh
+    (7): ./test.sh
+        --> Now we get the result
+    (8): nano test.sh
+    (9): print() {
+            echo "This is a function"
+         }
+
+         print
+         print
+
+        --> Implement function (When we call this print function, we do not need to add "()"
+
+
+(10): Passing parameters to function:
+
+print() {
+    echo "This is a function $1 $3"
+} 
+
+print "Hello"
+print this is good
+
+
+
+(11): 
+x=3
+echo $x
+
+--> Make a variables (do not have space between variable name and "=")
+
+
+(12): 
+
+exit 0
+
+--> Exit command, add this lind in the end (exit 0 --> success, exit 1 --> fail)
+
+
+(13): 
+control() {
+    if [[ $1 = "Tim" ]]; then 
+        echo "Hello Tim"
+    elif [[ $2 = "David" ]]; then
+        read -p "Name: " text
+        echo "text"
+    else 
+        echo "Tim is not here"
+    fi
+}
+
+control "Tim"
+control "Brian"
+control "Brian" "David"
+
+
+
+
+
