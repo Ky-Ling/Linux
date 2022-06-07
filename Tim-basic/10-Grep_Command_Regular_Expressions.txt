@@ -1,0 +1,44 @@
+1: (1): grep pattern filename
+    (2): grep A file.txt
+        --> Find the pattern A in this file.txt, and will print out the line of in which these matches occur
+
+2: Regular expression
+    (1): grep "A." file.txt
+        --> It will match any character or symbol with this period
+    (2): grep "A.A" file.txt
+    (3): grep "[A, B] .A" file.txt
+        [x, y] match either x or y 
+        --> Look for anything that starts with A or B, then has any symbol, then ends with A
+
+    (4): grep "A.B\|B.A" file.txt
+        --> "\|" search for one pattern or another
+
+    (5): grep AB$ file.txt
+        --> $ matches end of the line
+    (6): grep ^AB file.txt
+        --> ^ matches start of the line
+
+3: grep options
+    (1): grep -n ABD file.txt 
+        --> Get the number of lines
+    (2): grep -o AB file.txt
+        --> Only show this pattern with ignoring other letters
+
+    (3): grep -c 4 A.A file.txt
+         --> Show us lines after the matched pattern. "-c k": show k lines surrounding all matches
+
+
+4: Filtering outputs with grep
+    (1): ls | grep AB
+        --> ls | grep "pattern"
+
+    (2): cat file.txt | grep AB
+
+
+5: Grepping directories:
+
+
+    (1): grep -r hello root
+        --> -r recursively searches in the directory. It will show us all of the "hello" in any of the file that are inside of 
+            this root directory
+            
