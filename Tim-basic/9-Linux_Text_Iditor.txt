@@ -1,0 +1,59 @@
+1: nano test.txt
+    --> If this file exists, just open it, if it not exists, it will create this file 
+
+2: CTRL + S
+    --> Save this file 
+   CTRL + O 
+    --> Save as a different name
+   CTRL + C
+    --> Cancel the current operation
+   CTRL + G
+    --> Show us all the commands 
+   CTRL + ^ and use the cursor to select the content we wanna copy. The Alt + ^, now content is copied to clipboard
+    --> copy
+   CTRL + U
+    --> paste
+   CTRL + ^, and CTRL + K 
+    --> cut
+   CTRL + S, CTRL + X
+    --> Save and Exit shortcut
+
+3: vi test2.txt
+
+4: Insert mode(modify the file) and command mode(commands to the editor)
+
+4: I
+    --> Insert mode
+6: Esc
+    --> Exit the insert mode
+
+7: :wq
+    --> Save and quit command
+
+8: :q!
+    --> Just quit without saving 
+
+9: (1): V
+    --> Visual mode and we can highlight things in the file
+   (2): y
+    --> We have copied this text
+   (3): P
+    --> paste
+    (4): D
+    --> Delete the content we highlight
+
+    (5): U
+    --> Undo
+    (6): CTRL + R
+    --> Redo
+    (7): W
+    --> skip one word
+    (8) B
+    --> Back one word
+    (9): 0
+    --> Move to the beginning of this line
+    (10): Shift + 4
+    --> Move to the end of this line
+    (11): 
+
+10: 
