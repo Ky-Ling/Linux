@@ -1,0 +1,45 @@
+1: crontab: Specific to each user, every use on the system has one
+   cronjobs: is a command that is scheduled  to run at a Specific time, cronjobs is managed by crontab
+
+2: View the current crontab
+    (1): crontab -l
+    (2): crontab -e
+        --> Create ("e" -> edit)
+3: 
+    1st *: minute
+    2ed *: hour
+    3rd *: day of month
+    4th *: month
+    5th *: day of week
+
+4: 
+    (1): */1 * * * * * ls
+    --> Run this "ls" command every one minute
+    (2): 15 * * * * * * ls
+    --> At the 15th minute of every hour
+    (3): 5,10,15 * * * * ls 
+    --> Every 5th, 10th, 15th minutes of every hour
+    (4): 0 * * * * ls
+    --> Every hour
+    (5): 0 */4 * * * ls
+    --> Every four hours at the zero with minutes of that hour
+    (6): 0 0 * * * ls
+    --> Every day
+    (7): 0 5 * * * ls
+    --> Every day at 5am
+    (8): 30 10 1 * * ls
+    --> First day of the every month at 10:30
+    (9): 30 10 1 */3 * ls
+    --> Every three months on the first day at 10:30am
+    (10): 0 0 * * 1-5 ls
+    --> Monday to Friday
+    (11): @daily ls
+    (12): @midnight ls
+    (13): @reboot 
+    (14): @weekly ks
+    
+    (15): */1 * * * * ./root/test.sh
+    --> Run a Specific script
+    (16): * * * * * python3 /root/test.py
+
+
