@@ -1,0 +1,34 @@
+1: 
+    (1): uptime
+        --> Show uptime of this system
+    (2): wall hello world
+        --> broadcast a message to all users
+    (3): write "username"
+        --> Send a message to one user
+    (4): mesg n --> disable
+         mesg y --> Enable
+        --> Enable or disable the ability to receive the message 
+    (5): who
+        --> Show all the users who are logged into the system
+    (6): free
+        --> tell us all the system resources being used
+    (7): sort "filename" --> ascending order
+         sort -r "filename" -> descending order
+        --> arranges lines in a file
+        --> Create a file and write different lines of words, save and exit
+
+    (8): shutdown -h now 
+         shutdown -h +10  --> shutdown in 10 minutes
+         shutdown -r new  --> restart the machine
+
+        --> shutdown the machine at a specific time from command line
+    (9): man ls
+         man "name of the command"
+        --> Bring up the manual for different commands
+    (10): whatis "name of the command"
+        --> give a brief description of a command 
+    (11): tail "filename"
+          tail -n "number of lines" "filename"
+        --> show the last 10 lines of a file 
+
+    
