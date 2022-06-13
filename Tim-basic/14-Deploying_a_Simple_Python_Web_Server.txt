@@ -1,0 +1,50 @@
+1: apt-get install python3
+    --> Install Python 3
+
+2: apt-get install python3-pip
+    --> Install pip
+
+3:  (0): pip3 install flask
+    (1): midir flask_project --> On home page
+    (2): cd flask_project
+    (3): nano __init__.py
+    (4): write flask code --> right click
+
+
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+app.config["SECRET_KEY"] = "secretkey123"
+
+@app.route("/")
+def home():
+    return jsonify({ "Message": "Testing" })
+
+
+if __name__ == "__main__":
+    app.run()
+
+    (5): Save and exit
+    (6): apt install nginx
+        --> Install and configure NGINX
+    
+    (7): nano /etc/nginx/sites-enabled/flask_project
+    (8): 
+        We have to find the server IP address
+    
+    (9): unlink /etc/nginx/sites-enabled/default
+        --> Remove the default configuration file
+
+    (10): nginx -s reload
+        --> Reload
+    
+    
+    (11): apt-get install gunicorn
+        --> Python web server gateway interface 
+
+    (12): cd ../
+        --> Go to parent folder of flask_project
+    (13): gunicorn -w 3 flask_project:app 
+        --> "w": worker
+    
+    (14): go to chrome to test
