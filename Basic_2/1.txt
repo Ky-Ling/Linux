@@ -1,0 +1,243 @@
+1: man
+    --> Stands for "manual". It tells our information or manual pages for commands
+
+2: head <filename>
+    --> Print out the first 10 lines of content
+   head <filename> -n 100
+    --> First 100 lines
+
+3: tail <filename>
+    --> Last 10 lines 
+   tail <filename> -n 30
+
+4: Redirecting standard output
+    (1): date
+        --> Get the current date
+    
+    (2): touch today.txt
+         data > today.txt
+         cat today.txt
+        --> Get the data information and store it in a file 
+        ">": change content dynamically if we continue to use, overwrite this file 
+        ">": Append content on the end
+
+5: less <filename>
+    --> Show us the content stored in a file with a nicer UI
+   
+   /green
+    --> search for a word
+
+   shift + G
+    --> Scroll down to the end
+   
+   shift + g
+    --> Scroll up to the start
+
+6: echo "Hello"
+    --> Print out directly
+
+   echo "USERNAME=Brian" > config.txt
+    --> Create a new file and write in the content
+
+   echo "KEY=1324ds" >> config.txt
+    --> Append content
+
+7: wc <filename>
+     --> Word Count: bytes and lines
+    first number: lines
+    second number: words
+    third: bytes
+
+   wc -l <filename>
+   wc -w <filename>
+
+8: ls -l | wc
+    --> piping 
+   cat <filename1> <filename2> | wc -l
+
+9: sort <filename>
+   sort -n <filename>
+   sort -nr <filename> --> descending order
+   sort -nu <filename> --> get unique number
+    --> sort things numerically
+
+10: uniq <filename>
+    --> It removes adjacent duplicated values
+    sort <filename> | uniq 
+    --> Pip it to unique values
+
+11: expansions:
+
+    (1): echo *
+        --> We will get a list of every path name in this current folder
+    (2): echo *.txt
+    (3): ls -l *.txt
+    (4): echo {a, b, c}
+    (5): echo {a, b, c}.txt
+        --> Create every combination of a extension
+    (6): echo app.{js, html, css, py}
+    (7): touch app.{js, html, css, py}
+    (8): echo {1..99}
+
+
+12: diff
+    --> Find the difference of two different files
+    
+    diff <filename1> <filename2>
+    diff -y <filename1> <filename2>
+    diff -u <filename1> <filename2>
+
+13: find . -name "app"
+    find . -name "*app*"
+    --> Find files that has "app" in their names
+    find . -name "*.py"
+    find APP -name "*.js"
+    --> Find all files that has js file in this APP folder
+
+    find . -type d -name "*.js"
+    find . -type d -iname "*.js"
+    --> Insensitive version
+    find . -name "E*" -or -name "*F"
+
+    find . -type f -size +100k
+    --> Type is file and greater than 100 kilobytes
+
+
+14: grep
+        --> Help us find a text inside of a file 
+    grep green <filename>
+    grep -n green <filename>
+        --> Get line number
+    
+    grep -r "Chicken"
+        --> Somewhere in my desktop
+
+15: du
+    --> disk usage
+    du <folder>
+    du -h | sort -h
+    
+16: df
+    --> Information about the mounted file systems
+    df -h
+
+17: history
+
+    !<number>
+    --> rerun this command
+
+    history | less
+    --> Take the output of one command and pass it as input to another
+
+18: ps
+    --> Inspect or view the processes running on the computer
+
+    ps a
+    ps ax
+    ps axww
+
+    ps axww | grep "Visual Studio Code"
+    --> Find some processes
+
+
+19: top
+    top -o mem
+        --> Check the memory
+    sleep
+
+
+
+20: kill
+    --> Interact with programs
+
+    kill -l 
+    --> List different signals that we can send
+
+    kill -l | less
+
+    kill <PID>
+    --> By default, it will send TERM signal to the process is specified
+
+    kill -9 <PID>
+
+21: killall <name>
+    --> Name of the program
+
+    kill -9 node
+
+
+22: jobs 
+    bg --> background
+    fg --> foreground
+
+    fg <number>
+        --> resume the process
+
+    bg <number>
+        --> resume it and running it in the background    
+
+    
+23: gzip <filename>
+    --> Take the original file and compress it, and replace the origin file, so we only have the compressed
+        version 
+    
+    gzip -k <filename>
+    --> Keep the original file
+
+    gzip -d <filename>.gz
+    --> Decompress the file
+
+    gunzip <filename>.gz
+    --> Decompress version
+
+    gzip -kv <filename>
+    --> Give the information about how much we have reduced
+
+24: tar 
+    --> create an archive, grouping multiple files in a single file
+    
+    tar -cf archive.tar file1 file2
+
+    tar -xf archive.tar
+        --> extract files from an archive in the current folder
+    tar -xf archive.tar -D directory
+        --> a specific folder
+
+    tar -tf archive.tar
+        --> list the files contained in an archive
+
+        
+25: nano
+    nano <filename>
+
+
+26: alias
+
+    alias myls='ls -la'
+    myls
+        --> Verify
+    alias count="echo {2..99}"
+    
+    alias lscurrent="ls $PWD"
+    echo &PWD
+    pwd
+    lscurrent
+
+
+27: xargs
+    command 1 | xargs command 2
+    --> The output of a command is used as the input of another command
+
+    ls | sort
+    sort <filename>
+
+    cat <filename> | xargs rm
+    --> remove all the files in this <filename>
+
+
+28: ln --> create links
+
+
+
+
+
